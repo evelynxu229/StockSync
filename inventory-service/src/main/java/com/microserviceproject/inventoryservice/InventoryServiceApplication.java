@@ -2,13 +2,22 @@ package com.microserviceproject.inventoryservice;
 
 import com.microserviceproject.inventoryservice.model.Inventory;
 import com.microserviceproject.inventoryservice.repository.InventoryRepository;
+import com.netflix.discovery.EurekaClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
 import org.springframework.context.annotation.Bean;
+
+
 
 @SpringBootApplication
 public class InventoryServiceApplication {
+
+
+	private EurekaClient discoveryClient;
 
 	public static void main(String[] args) {
 		SpringApplication.run(InventoryServiceApplication.class, args);
